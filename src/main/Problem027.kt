@@ -15,10 +15,11 @@ fun main(args: Array<String>) {
     fun quadratic(n:Int, a:Int, b:Int) = n.pow(2) + a * n + b
     val nRange = (0..87400)
     val isPrime = sieve(87400)
-    val list = (-1000..1000).asSequence()
+    val list = (-1000..1000)
     val c = list.flatMap { a ->
         list.map { b ->
             nRange.takeWhile { n -> isPrime[Math.abs(quadratic(n, a, b))] }.count() }}
 
     println(c.max())
+    //~30ms
 }

@@ -13,9 +13,8 @@ fun main(args: Array<String>) {
     fun combination(n: Int, r: Int): BigInteger =
             factorial(n) / ( factorial(n - r) * factorial(r) )
 
-    fun countRoutes(d:Int):Long = combination(d*2, d).toLong()
+    fun countRoutes(d: Int): Long = combination(d * 2, d).toLong()
 
     println(countRoutes(20))
-
 
 }

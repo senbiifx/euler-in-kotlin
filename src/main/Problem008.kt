@@ -33,7 +33,7 @@ fun main(args: Array<String>) {
         if(list.size < len){
             return max
         }else{
-            val maxCurrent = Math.max(max, list.slice(0..len-1).reduce{x, y -> x * y})
+            val maxCurrent = Math.max(max, list.slice(0..len-1).product())
             val maxRecur = maxProduct(len, list.tail(), max)
             return Math.max(maxCurrent, maxRecur)
         }

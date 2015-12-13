@@ -18,5 +18,5 @@ fun main(args: Array<String>) {
             .flatMap { i -> (1..limit).map { j -> pythagorean(i, j) }.asSequence() }
             .find { it.sum() == 1000 }
 
-    println(r?.reduce{x, y -> x * y})
+    println(r?.product())
 }

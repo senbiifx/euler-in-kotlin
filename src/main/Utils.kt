@@ -14,6 +14,14 @@ fun Int.pow(n: Int): Int = Math.pow(this.toDouble(), n.toDouble()).toInt()
 fun Long.pow(n: Long): Long = Math.pow(this.toDouble(), n.toDouble()).toLong()
 fun Int.dividesBy(n: Int): Boolean = this % n == 0
 fun Long.dividesBy(n: Long): Boolean = this % n == 0L
+fun BigInteger.dividesBy(n: BigInteger): Boolean = this.mod(n) == BigInteger.ZERO
+fun Iterable<Int>.product() = fold(1) { a, b: Int -> a * b }
+fun Iterable<Long>.product() = fold(1.toLong()) { a, b: Long -> a * b }
+fun Iterable<BigInteger>.product() = fold(bigInt(1)) { a, b: BigInteger -> a * b }
+fun Sequence<Int>.product() = fold(1) { a, b -> a * b }
+fun Sequence<Long>.product() = fold(1.toLong()) { a, b -> a * b }
+fun Sequence<BigInteger>.product() = fold(bigInt(1)) { a, b -> a * b }
+
 
 fun dividesBy(n: Int) = { x: Int -> x.dividesBy(n) }
 fun dividesBy(n: Long) = { x: Long -> x.dividesBy(n) }

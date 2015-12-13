@@ -1,7 +1,5 @@
 package main
 
-import java.util.*
-
 /**
  * Longest Collatz sequence
  * https://main.net/problem=14

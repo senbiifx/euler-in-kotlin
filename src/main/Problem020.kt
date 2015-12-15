@@ -11,4 +11,5 @@ fun main(args: Array<String>) {
                             .map { it.toString().toInt() }
                             .sum()
     println(sum)
+
 }

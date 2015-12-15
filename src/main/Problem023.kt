@@ -2,7 +2,7 @@ package main
 
 /**
  * Non-abundant sums
- * Problem 23
+ * https://projecteuler.net/problem=23
  */
 
 fun main(args: Array<String>) {

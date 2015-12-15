@@ -7,6 +7,7 @@ import kotlin.math.*
  * Lattice paths
  * https://main.net/problem=15
  */
+
 fun main(args: Array<String>) {
     //solution: nCr, where n = 40, r = 20
 

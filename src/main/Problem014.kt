@@ -4,6 +4,7 @@ package main
  * Longest Collatz sequence
  * https://main.net/problem=14
  */
+
 fun main(args: Array<String>) {
 
     tailrec fun collatz(i:Long, acc:Long):Long{

@@ -3,9 +3,6 @@ package main
 /**
  *  Amicable numbers
  *  https://main.net/problem=21
- *
- *  3 · 2n - 1,   3 · 2n+1 - 1,   and    32 · 22n+1 - 1   are all prime, then
- *  2n+1(3 · 2n - 1)(3 · 2n+1 - 1)    and    2n+1(32 · 22n+1 - 1)
  */
 
 fun main(args: Array<String>) {

@@ -16,4 +16,5 @@ fun main(args: Array<String>) {
                         .filter { it.atDay(1).getDayOfWeek().equals(SUNDAY) }
                         .count()
     println(r)
+
 }

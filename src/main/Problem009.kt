@@ -6,6 +6,7 @@ package main
  */
 
 fun main(args: Array<String>) {
+
     fun a(n:Int, m:Int) =  n * n - m * m
     fun b(n:Int, m:Int) = 2 * n * m
     fun c(n:Int, m:Int) =  n * n + m * m
@@ -19,4 +20,5 @@ fun main(args: Array<String>) {
             .find { it.sum() == 1000 }
 
     println(r?.product())
+
 }

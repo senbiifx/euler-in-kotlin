@@ -6,6 +6,7 @@ import java.io.File
  *  Names scores
  *  https://main.net/problem=22
  */
+
 fun main(args: Array<String>) {
 
     val words = File("src/resources/Problem022.txt").readText().split(',')
@@ -22,4 +23,5 @@ fun main(args: Array<String>) {
                      .sum()
 
     println(total)
+
 }

@@ -8,5 +8,7 @@ import java.math.BigInteger
  */
 
 fun main(args: Array<String>) {
+
     println(BigInteger("2").pow(1000).toString().map { it.toString().toInt() }.sum())
+
 }

@@ -16,5 +16,6 @@ fun main(args: Array<String>) {
     val triangles: Sequence<Long> = sequence (1L){ it + 1 }.map { it * (it + 1) / 2 }
 
     val tri:Long = triangles.first { divisorsCount(it) > 500 }
-    println(tri) //~250ms
+    println(tri)
+    //~250ms
 }

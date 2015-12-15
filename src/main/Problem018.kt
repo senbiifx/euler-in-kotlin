@@ -5,6 +5,7 @@ package main
  * https://main.net/problem=18
  */
 fun main(args: Array<String>) {
+
     val input = """
             75
             95 64
@@ -40,4 +41,5 @@ fun main(args: Array<String>) {
                       .fold(triangle.last(), accumulateSum)
 
     println(max)
+
 }

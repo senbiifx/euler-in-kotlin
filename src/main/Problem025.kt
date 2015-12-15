@@ -15,5 +15,6 @@ fun main(args: Array<String>) {
     val limit = bigInt(10).pow(999)
     val index = fibonacci.indexOfFirst { limit < it.second } + 1
 
-    println(index) //2ms
+    println(index)
+    //2ms
 }

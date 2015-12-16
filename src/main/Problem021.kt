@@ -17,6 +17,7 @@ fun main(args: Array<String>) {
             amicable.takeWhile { it.first < 10000 || it.second < 10000 }
                     .flatMap { it.toList().asSequence() }
                     .distinct()
+
     println(amicableNumbers.sum())
     //~100ms
 }

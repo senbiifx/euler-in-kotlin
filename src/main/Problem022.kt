@@ -4,7 +4,7 @@ import java.io.File
 
 /**
  *  Names scores
- *  https://main.net/problem=22
+ *  https://projecteuler.net/problem=22
  */
 
 fun main(args: Array<String>) {

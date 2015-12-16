@@ -11,6 +11,8 @@ import kotlin.math.*
 fun <T> List<T>.head() = first()
 fun <T> List<T>.tail() = if(count() == 1) listOf() else slice(1..lastIndex)
 fun Int.pow(n: Int): Int = Math.pow(this.toDouble(), n.toDouble()).toInt()
+fun Int.abs(): Int = Math.abs(this)
+fun Long.abs(): Long = Math.abs(this)
 fun Long.pow(n: Long): Long = Math.pow(this.toDouble(), n.toDouble()).toLong()
 fun Int.dividesBy(n: Int): Boolean = this % n == 0
 fun Long.dividesBy(n: Long): Boolean = this % n == 0L
@@ -37,7 +39,7 @@ fun primeFactors(n: Long): List<Long> {
 fun factorial(n: Int): BigInteger =
         (n downTo 2).fold(BigInteger.ONE) { x, y -> x * bigInt(y) }
 
-fun sieve(n: Int): List<Boolean> {
+fun esieve(n: Int): List<Boolean> {
     val isPrime: MutableList<Boolean> = sequence { true }.take(n).toArrayList()
     isPrime[0] = false
     isPrime[1] = false

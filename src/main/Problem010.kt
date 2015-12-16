@@ -7,7 +7,7 @@ package main
 
 fun main(args: Array<String>) {
 
-    val sum: Long = sieve(2000000)
+    val sum: Long = esieve(2000000)
             .asSequence()
             .withIndex()
             .filter { it.value }

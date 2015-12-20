@@ -13,7 +13,5 @@ fun main(args: Array<String>) {
     val sum = range.asSequence()
                    .filter { it == it.fifthPowDigitSum() }
                    .sum()
-    xStart()
     println(sum)
-    xEnd()
 }

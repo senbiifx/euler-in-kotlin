@@ -23,7 +23,8 @@ fun Iterable<BigInteger>.product() = fold(bigInt(1)) { a, b: BigInteger -> a * b
 fun Sequence<Int>.product() = fold(1) { a, b -> a * b }
 fun Sequence<Long>.product() = fold(1.toLong()) { a, b -> a * b }
 fun Sequence<BigInteger>.product() = fold(bigInt(1)) { a, b -> a * b }
-
+fun Int.toDigitsList() = this.toString().map { it.toString().toInt() }
+fun Long.toDigitsList() = this.toString().map { it.toString().toLong() }
 
 fun dividesBy(n: Int) = { x: Int -> x.dividesBy(n) }
 fun dividesBy(n: Long) = { x: Long -> x.dividesBy(n) }

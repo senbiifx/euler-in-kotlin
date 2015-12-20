@@ -29,11 +29,11 @@ fun main(args: Array<String>) {
         05886116467109405077541002256983155200055935729725
         71636269561882670428252483600823257530420752963450"""
 
-    fun maxProduct(len:Int, list:List<Long>, max:Long = 0):Long{
-        if(list.size < len){
+    fun maxProduct(len: Int, list: List<Long>, max: Long = 0): Long {
+        if (list.size < len) {
             return max
-        }else{
-            val maxCurrent = Math.max(max, list.slice(0..len-1).product())
+        } else {
+            val maxCurrent = Math.max(max, list.slice(0..len - 1).product())
             val maxRecur = maxProduct(len, list.tail(), max)
             return Math.max(maxCurrent, maxRecur)
         }

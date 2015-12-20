@@ -39,7 +39,7 @@ fun main(args: Array<String>) {
         }
     }
 
-    val digits = input.filter { it.isDigit() }.toList().map { it.toString().toLong() }
+    val digits = input.filter { it.isDigit() }.map { it.toString().toLong() }
 
     println(maxProduct(13,  digits))
 

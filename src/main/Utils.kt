@@ -69,7 +69,7 @@ fun sumOfDivisors(n: Int): Int = when (n) {
 }
 
 
-class Memoize<T, R>(val f: ((T) -> R).(T) -> R) : (T) -> R {
+class Memo<T, R>(val f: ((T) -> R).(T) -> R) : (T) -> R {
     private val cache: MutableMap<T, R> = hashMapOf()
 
     override fun invoke(t: T): R {
@@ -77,3 +77,13 @@ class Memoize<T, R>(val f: ((T) -> R).(T) -> R) : (T) -> R {
     }
 
 }
+
+class BiMemo<T, U, R>(val f: ((T, U) -> R).(T, U) -> R) : (T, U) -> R {
+
+    private val memo =
+            Memo<Pair<T, U>, R> { p -> f(p.first, p.second) }
+
+    override fun invoke(t: T, u: U): R = memo.invoke(Pair(t, u))
+
+}
+

@@ -7,8 +7,7 @@ package main
 
 fun main(args: Array<String>) {
 
-    fun squareOfSum(n :Int):Int =
-            (n * ( n + 1) / 2).pow( 2 )
+    fun squareOfSum(n :Int):Int = (n * ( n + 1) / 2).pow( 2 )
 
     fun sumOfSquares(n:Int):Int = n * ( n + 1 ) * ( 2 * n + 1 ) / 6
 

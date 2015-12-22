@@ -43,7 +43,9 @@ fun main(args: Array<String>) {
         val southBoundary = { i: Int -> i <= indices.last - dim * adj }
         val eastBoundary = { i: Int -> i % dim < dim - adj }
         val westBoundary = { i: Int -> i % dim >= adj }
+
         val (s, e, se, sw) = listOf(20, 1, 21, 19)
+
         val south  =  crawl(s,  adj, indices.filter(southBoundary), list)
         val east   =  crawl(e,  adj, indices.filter(eastBoundary), list)
         val southE =  crawl(se, adj, indices.filter(eastBoundary)

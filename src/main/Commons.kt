@@ -2,12 +2,9 @@ package main
 
 import java.math.BigInteger
 import kotlin.math.*
+import java.lang.Math.*
 
-/**
- *  Common functions
- */
 
-/*extensions*/
 fun <T> List<T>.head() = first()
 fun <T> List<T>.tail() = if(count() == 1) listOf() else slice(1..lastIndex)
 fun Int.pow(n: Int): Int = Math.pow(this.toDouble(), n.toDouble()).toInt()
@@ -25,12 +22,35 @@ fun Sequence<Long>.product() = fold(1.toLong()) { a, b -> a * b }
 fun Sequence<BigInteger>.product() = fold(bigInt(1)) { a, b -> a * b }
 fun Int.toDigitsList() = this.toString().map { it.toString().toInt() }
 fun Long.toDigitsList() = this.toString().map { it.toString().toLong() }
+fun Int.length() = if(this == 0) 1 else ceil(log10(this + 1.0)).toInt()
+fun Long.length() = if(this == 0L) 1 else ceil(log10(this + 1.0)).toInt()
 
 fun dividesBy(n: Int) = { x: Int -> x.dividesBy(n) }
 fun dividesBy(n: Long) = { x: Long -> x.dividesBy(n) }
 
-
 fun bigInt(n: Int) = BigInteger(n.toString())
+
+class Memo<T, R>(val f: ((T) -> R).(T) -> R) : (T) -> R {
+
+    private val cache: MutableMap<T, R> = hashMapOf()
+
+    override fun invoke(t: T): R {
+        return cache.getOrPut(t, { f(t) })
+    }
+
+}
+
+class BiMemo<T, U, R>(val f: ((T, U) -> R).(T, U) -> R) : (T, U) -> R {
+
+    private val memo =
+            Memo<Pair<T, U>, R> { p -> f(p.first, p.second) }
+
+    override fun invoke(t: T, u: U): R = memo.invoke(Pair(t, u))
+
+}
+
+
+/* -----------------Math functions----------------- */
 
 fun primeFactors(n: Long): List<Long> {
     val prime = (2..Math.sqrt(n.toDouble()).toInt()).find { n % it == 0.toLong() }
@@ -68,22 +88,22 @@ fun sumOfDivisors(n: Int): Int = when (n) {
             .plus(1)
 }
 
-
-class Memo<T, R>(val f: ((T) -> R).(T) -> R) : (T) -> R {
-    private val cache: MutableMap<T, R> = hashMapOf()
-
-    override fun invoke(t: T): R {
-        return cache.getOrPut(t, { f(t) })
+fun Long.isPandigital() : Boolean{
+    fun isPandigital(num: Long, digits: Long): Boolean {
+        if (num > 0) {
+            val tmp = digits.or(1L.shl(num.toInt() % 10 - 1))
+            if ( tmp == digits) {
+                return false
+            } else {
+                return isPandigital(num / 10, tmp)
+            }
+        } else {
+            return digits == 1L.shl(ceil(log10(this.toDouble())).toInt()) - 1
+        }
     }
-
+    return isPandigital(this, 0)
 }
 
-class BiMemo<T, U, R>(val f: ((T, U) -> R).(T, U) -> R) : (T, U) -> R {
-
-    private val memo =
-            Memo<Pair<T, U>, R> { p -> f(p.first, p.second) }
-
-    override fun invoke(t: T, u: U): R = memo.invoke(Pair(t, u))
-
-}
-
+fun Int.isPandigital() = this.toLong().isPandigital()
+infix fun Int.concat(b : Int) = this * 10.pow(b.length()) + b
+infix fun Long.concat(b : Long) = this * 10.pow(b.length()) + b

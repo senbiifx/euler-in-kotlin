@@ -13,7 +13,7 @@ fun main(args: Array<String>) {
         concatenated.length() == 9 && concatenated.isPandigital()
     }
 
-    val combinations = (1..10000L).flatMap { m -> (1..10000L / m).map { n -> Triple(m, n, m*n) } }
+    val combinations = (1..10000L).flatMap { m -> (1..10000L / m).map { n -> Triple(m, n, m * n) } }
                                   .filter( pandigitalProduct )
                                   .map { it.third }
                                   .distinct()

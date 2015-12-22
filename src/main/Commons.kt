@@ -98,7 +98,7 @@ fun Long.isPandigital() : Boolean{
                 return isPandigital(num / 10, tmp)
             }
         } else {
-            return digits == 1L.shl(ceil(log10(this.toDouble())).toInt()) - 1
+            return digits == 1L.shl( length() ) - 1
         }
     }
     return isPandigital(this, 0)

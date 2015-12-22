@@ -1,6 +1,7 @@
 package main
 
 import java.lang.Math.*
+
 /**
  * Pandigital products
  * https://projecteuler.net/problem=32

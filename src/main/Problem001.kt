@@ -4,7 +4,6 @@ package main
  * Multiples of 3 and 5
  * https://main.net/problem=1
  */
-
 fun main(args: Array<String>) {
 
     val sum = (1..999).asSequence()

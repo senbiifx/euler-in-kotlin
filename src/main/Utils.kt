@@ -7,21 +7,27 @@ import java.lang.Math.*
 
 fun <T> List<T>.head() = first()
 fun <T> List<T>.tail() = if(count() == 1) listOf() else slice(1..lastIndex)
-fun Int.pow(n: Int): Int = Math.pow(this.toDouble(), n.toDouble()).toInt()
+
 fun Int.abs(): Int = Math.abs(this)
 fun Long.abs(): Long = Math.abs(this)
+
+fun Int.pow(n: Int): Int = Math.pow(this.toDouble(), n.toDouble()).toInt()
 fun Long.pow(n: Long): Long = Math.pow(this.toDouble(), n.toDouble()).toLong()
+
 fun Int.dividesBy(n: Int): Boolean = this % n == 0
 fun Long.dividesBy(n: Long): Boolean = this % n == 0L
 fun BigInteger.dividesBy(n: BigInteger): Boolean = this.mod(n) == BigInteger.ZERO
+
 fun Iterable<Int>.product() = fold(1) { a, b: Int -> a * b }
 fun Iterable<Long>.product() = fold(1.toLong()) { a, b: Long -> a * b }
 fun Iterable<BigInteger>.product() = fold(bigInt(1)) { a, b: BigInteger -> a * b }
 fun Sequence<Int>.product() = fold(1) { a, b -> a * b }
 fun Sequence<Long>.product() = fold(1.toLong()) { a, b -> a * b }
 fun Sequence<BigInteger>.product() = fold(bigInt(1)) { a, b -> a * b }
+
 fun Int.toDigitsList() = this.toString().map { it.toString().toInt() }
 fun Long.toDigitsList() = this.toString().map { it.toString().toLong() }
+
 fun Int.length() = if(this == 0) 1 else ceil(log10(this + 1.0)).toInt()
 fun Long.length() = if(this == 0L) 1 else ceil(log10(this + 1.0)).toInt()
 
@@ -104,6 +110,11 @@ fun Long.isPandigital() : Boolean{
     return isPandigital(this, 0)
 }
 
+fun gcf(a: Int, b: Int):Int = if(b==0) a else  gcf(b, a % b )
+
+fun lcm(a:Int, b:Int):Int =  a / gcf(a, b) * b;
+
 fun Int.isPandigital() = this.toLong().isPandigital()
+
 infix fun Int.concat(b : Int) = this * 10.pow(b.length()) + b
 infix fun Long.concat(b : Long) = this * 10.pow(b.length()) + b

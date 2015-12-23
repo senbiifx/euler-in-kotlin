@@ -67,10 +67,10 @@ fun factorial(n: Int): BigInteger =
         (n downTo 2).fold(BigInteger.ONE) { x, y -> x * bigInt(y) }
 
 fun esieve(n: Int): List<Boolean> {
-    val isPrime: MutableList<Boolean> = sequence { true }.take(n).toArrayList()
+    val isPrime = Array(n, {true})
     isPrime[0] = false
     isPrime[1] = false
-    (2..Math.sqrt(n.toDouble()).toInt()).forEach { i ->
+    (2..sqrt(n.toDouble()).toInt()).forEach { i ->
         if (isPrime[i]) {
             var j = i
             while (i * j < n) {
@@ -84,7 +84,7 @@ fun esieve(n: Int): List<Boolean> {
 fun sumOfDivisors(n: Int): Int = when (n) {
     4 -> 3
     in 1..5 -> 1
-    else -> (2..Math.sqrt(n.toDouble()).toInt())
+    else -> (2..sqrt(n.toDouble()).toInt())
             .filter { n.dividesBy(it) }
             .map {
                 val div = n / it

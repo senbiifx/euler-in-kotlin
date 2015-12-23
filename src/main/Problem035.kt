@@ -6,7 +6,6 @@ package main
  */
 
 fun main(args: Array<String>) {
-    xStart()
     val isPrime = esieve(1000000)
     fun Int.rotate() = this / 10 + this % 10 * 10.pow(length() - 1)
     val circularPrime = { n: Int ->
@@ -20,5 +19,4 @@ fun main(args: Array<String>) {
 
     val primes = (1..999999).filter(circularPrime)
     println(primes.count())
-    xEnd()
 }

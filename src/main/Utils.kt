@@ -118,3 +118,6 @@ fun Int.isPandigital() = this.toLong().isPandigital()
 
 infix fun Int.concat(b : Int) = this * 10.pow(b.length()) + b
 infix fun Long.concat(b : Long) = this * 10.pow(b.length()) + b
+
+fun Int.reverse(b: Int = 10, rev: Int = 0): Int = if (this > 0) (this / b ).reverse(b, rev * b + this % b) else rev
+fun Int.isPalindrome(b:Int = 10) = this == this.reverse(b)

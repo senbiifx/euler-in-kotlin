@@ -3,6 +3,7 @@ package main
 /**
  * Quadratic primes
  * https://projecteuler.net/problem=27
+ * #y
  */
 
 fun main(args: Array<String>) {

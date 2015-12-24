@@ -3,6 +3,7 @@ package main
 /**
  * Special Pythagorean triplet
  * https://main.net/problem=9
+ * #y
  */
 
 fun main(args: Array<String>) {

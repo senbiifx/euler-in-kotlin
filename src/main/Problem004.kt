@@ -3,6 +3,7 @@ package main
 /**
  * 	Largest palindrome product
  * https://main.net/problem=5
+ * #y
  */
 
 fun main(args: Array<String>) {

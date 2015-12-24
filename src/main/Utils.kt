@@ -110,6 +110,15 @@ fun Long.isPandigital() : Boolean{
     return isPandigital(this, 0)
 }
 
+fun Long.isPrime() = when{
+    this == 1L -> false
+    this == 2L -> true
+    this.dividesBy(2) -> false
+    else -> (3..sqrt(this.toDouble()).toLong()).step(2).none { this % it == 0L }
+}
+
+fun Int.isPrime() = this.toLong().isPrime()
+
 fun gcf(a: Int, b: Int):Int = if(b==0) a else  gcf(b, a % b )
 
 fun lcm(a:Int, b:Int):Int =  a / gcf(a, b) * b;

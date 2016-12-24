@@ -18,8 +18,8 @@ fun main(args: Array<String>) {
         tailrec fun search(tp : List<Int>, space : List<Int>) : List<Int>{
             if(tp.size >= limit) return tp
             val next = space.flatMap { i -> list.map { j -> i concat j } }
-                            .filter { it.isPrime() }
-            val truncatables = next.filter { it.isLeftTruncatable() }
+                            .filter(Int::isPrime)
+            val truncatables = next.filter(Int::isLeftTruncatable)
 
             return  search(tp + truncatables, next )
         }

@@ -4,7 +4,7 @@ import java.math.BigInteger
 
 /**
  * Power digit sum
- * https://main.net/problem=16
+ * https://projecteuler.net/problem=16
  */
 
 fun main(args: Array<String>) {

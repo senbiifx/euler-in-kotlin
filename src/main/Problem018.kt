@@ -2,7 +2,7 @@ package main
 
 /**
  * Maximum path sum I
- * https://main.net/problem=18
+ * https://projecteuler.net/problem=18
  */
 fun main(args: Array<String>) {
 
@@ -24,14 +24,14 @@ fun main(args: Array<String>) {
             04 62 98 27 23 09 70 98 73 93 38 53 60 04 23"""
 
     val triangle = input.trim().split("\n")
-            .map { it.trim().split(" ").map { it.toInt() } }
+            .map { it.trim().split(" ").map(String::toInt) }
 
     fun maxForEachIndex(a:List<Int>, b:List<Int>):List<Int> =
-            a.zip(b).map { Math.max(it.first, it.second) }
+            a.zip(b).map { Math.max(it._1, it._2) }
 
     val accumulateSum = { acc: List<Int>, next: List<Int> ->
-        val seq1 = next.zip(acc).map { it.first + it.second }
-        val seq2 = next.zip(acc.drop(1)).map { it.first + it.second }
+        val seq1 = next.zip(acc).map { it._1 + it._2}
+        val seq2 = next.zip(acc.drop(1)).map { it._1 + it._2 }
         maxForEachIndex(seq1, seq2)
     }
 

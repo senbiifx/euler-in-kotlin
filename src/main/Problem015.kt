@@ -1,11 +1,10 @@
 package main
 
 import java.math.BigInteger
-import kotlin.math.*
 
 /**
  * Lattice paths
- * https://main.net/problem=15
+ * https://projecteuler.net/problem=15
  */
 
 fun main(args: Array<String>) {

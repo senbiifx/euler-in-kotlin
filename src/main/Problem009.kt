@@ -2,8 +2,7 @@ package main
 
 /**
  * Special Pythagorean triplet
- * https://main.net/problem=9
- * #y
+ * https://projecteuler.net/problem=9
  */
 
 fun main(args: Array<String>) {
@@ -17,8 +16,8 @@ fun main(args: Array<String>) {
     val n = 1000
     val limit = Math.sqrt(n.toDouble()/2).toInt()
     val r =  (limit downTo 1).asSequence()
-            .flatMap { i -> (1..limit).map { j -> pythagorean(i, j) }.asSequence() }
-            .find { it.sum() == 1000 }
+                             .flatMap { i -> (1..limit).map { j -> pythagorean(i, j) }.asSequence() }
+                             .find { it.sum() == 1000 }
 
     println(r?.product())
 

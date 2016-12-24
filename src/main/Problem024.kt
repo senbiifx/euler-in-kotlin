@@ -2,7 +2,7 @@ package main
 
 /**
  * Lexicographic permutations
- * https://main.net/problem=24
+ * https://projecteuler.net/problem=24
  */
 
 fun main(args: Array<String>) {

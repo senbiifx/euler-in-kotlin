@@ -2,7 +2,7 @@ package main
 
 /**
  * Summation of primes
- * https://main.net/problem=10
+ * https://projecteuler.net/problem=10
  */
 
 fun main(args: Array<String>) {

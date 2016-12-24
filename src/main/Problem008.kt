@@ -2,7 +2,7 @@ package main
 
 /**
  * Largest product in a series
- * https://main.net/problem=8
+ * https://projecteuler.net/problem=8
  */
 
 fun main(args: Array<String>) {
@@ -39,7 +39,7 @@ fun main(args: Array<String>) {
         }
     }
 
-    val digits = input.filter { it.isDigit() }
+    val digits = input.filter(Char::isDigit)
                       .map { it.toString().toLong() }
 
     println(maxProduct(13,  digits))

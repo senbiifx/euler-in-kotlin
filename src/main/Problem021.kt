@@ -2,19 +2,19 @@ package main
 
 /**
  *  Amicable numbers
- *  https://main.net/problem=21
+ *  https://projecteuler.net/problem=21
  */
 
 fun main(args: Array<String>) {
 
-    val amicable = sequence(0){it + 2}
-                    .map { Pair(it, sumOfDivisors(it)) }
-                    .filterNot { it.first == it.second }
-                    .filter { it.first == sumOfDivisors(it.second) }
+    val amicable = generateSequence(0, plus(2) )
+                    .map {  it to sumOfDivisors(it) }
+                    .filterNot { it._1 == it._2 }
+                    .filter { it._1 == sumOfDivisors(it._2) }
 
 
     val amicableNumbers =
-            amicable.takeWhile { it.first < 10000 || it.second < 10000 }
+            amicable.takeWhile { it._1 < 10000 || it._2 < 10000 }
                     .flatMap { it.toList().asSequence() }
                     .distinct()
 

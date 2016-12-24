@@ -2,7 +2,7 @@ package main
 
 /**
  *  Number letter counts
- *  https://main.net/problem=17
+ *  https://projecteuler.net/problem=17
  */
 
 fun main(args: Array<String>) {

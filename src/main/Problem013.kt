@@ -1,10 +1,9 @@
 package main
 
 import java.math.BigInteger
-import kotlin.math.plus
 /**
  * Large sum
- * https://main.net/problem=13
+ * https://projecteuler.net/problem=13
  */
 fun main(args: Array<String>) {
 

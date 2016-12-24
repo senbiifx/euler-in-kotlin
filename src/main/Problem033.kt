@@ -13,9 +13,9 @@ fun main(args: Array<String>) {
                          }
                      }
 
-    val product = fractions.reduce { a, b ->  Pair(a.first * b.first, a.second * b.second) }
+    val product = fractions.reduce { a, b ->  Pair(a._1 * b._1, a._2 * b._2) }
 
-    val solution = product.second / gcf(product.first, product.second)
+    val solution = product._2 / gcf(product._1, product._2)
 
     println(solution)
 }

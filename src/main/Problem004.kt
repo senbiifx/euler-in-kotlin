@@ -2,7 +2,7 @@ package main
 
 /**
  * 	Largest palindrome product
- * https://main.net/problem=5
+ * https://projecteuler.net/problem=5
  * #y
  */
 

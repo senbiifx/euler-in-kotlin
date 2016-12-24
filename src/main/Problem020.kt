@@ -2,7 +2,7 @@ package main
 
 /**
  * Factorial digit sum
- * https://main.net/problem=20
+ * https://projecteuler.net/problem=20
  */
 
 fun main(args: Array<String>) {

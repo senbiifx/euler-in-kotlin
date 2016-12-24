@@ -4,7 +4,7 @@ import kotlin.text.Regex
 
 /**
  * Largest product in a grid
- * https://main.net/problem=11
+ * https://projecteuler.net/problem=11
  */
 
 fun main(args: Array<String>) {
@@ -35,7 +35,7 @@ fun main(args: Array<String>) {
     fun crawl(inc:Int, adj:Int, indices:List<Int>, tbl:List<Int>) =
             indices.map { idx ->
                 tbl[idx] * (1..adj).map { tbl[idx + it * inc] }
-                                   .reduce{x, y -> x * y}
+                                   .product()
             }
 
     fun maxProduct(adj:Int, dim:Int, list:List<Int>):Int?{
@@ -57,8 +57,7 @@ fun main(args: Array<String>) {
     }
 
     val g = input.split(Regex("\\s+"))
-            .map { it.toInt() }.toList()
-
+                 .map(String::toInt)
     println(maxProduct(3, 20 , g))
 
 }

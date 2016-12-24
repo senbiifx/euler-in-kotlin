@@ -1,12 +1,14 @@
 package main
 
 import java.math.BigInteger
-import kotlin.math.*
 import java.lang.Math.*
 
 
 fun <T> List<T>.head() = first()
 fun <T> List<T>.tail() = if(count() == 1) listOf() else slice(1..lastIndex)
+
+val <A, B> Pair<A, B>._1: A get() =  first
+val <A, B> Pair<A, B>._2: B get() = second
 
 fun Int.abs(): Int = Math.abs(this)
 fun Long.abs(): Long = Math.abs(this)
@@ -33,6 +35,14 @@ fun Long.length() = if(this == 0L) 1 else ceil(log10(this + 1.0)).toInt()
 
 fun dividesBy(n: Int) = { x: Int -> x.dividesBy(n) }
 fun dividesBy(n: Long) = { x: Long -> x.dividesBy(n) }
+
+fun lessThan(n: Int) = { x: Int -> x < n }
+fun greaterThan(n: Int) = { x: Int -> x > n }
+fun equals(n: Int) = { x: Int -> x == n }
+fun plus(n: Int) = { i: Int -> i + n }
+fun minus(n: Int) = { i: Int -> i - n }
+fun times(n: Int) = { i: Int -> i * n }
+fun divide(n: Int) = { i: Int -> i / n }
 
 fun bigInt(n: Int) = BigInteger(n.toString())
 

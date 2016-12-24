@@ -2,7 +2,7 @@ package main
 
 /**
  * 	Largest prime factor
- * https://main.net/problem=3
+ * https://projecteuler.net/problem=3
  */
 fun main(args: Array<String>) {
 

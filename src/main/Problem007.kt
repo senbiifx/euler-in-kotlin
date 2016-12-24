@@ -2,11 +2,12 @@ package main
 
 /**
  * 10001st prime
- * https://main.net/problem=7
+ * https://projecteuler.net/problem=7
  */
 
 fun main(args: Array<String>) {
-    val prime = sequence(1, { it + 2}).filter { n-> n.isPrime() }
+
+    val prime = generateSequence(1, plus(2) ).filter( Int::isPrime )
 
     println(prime.take(10001).last())
 }

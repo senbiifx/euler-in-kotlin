@@ -2,7 +2,7 @@ package main
 
 /**
  * Longest Collatz sequence
- * https://main.net/problem=14
+ * https://projecteuler.net/problem=14
  */
 
 fun main(args: Array<String>) {

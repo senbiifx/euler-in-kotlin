@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
     val sums = abundant.asSequence().flatMap { i ->
         abundant.asSequence()
                 .takeWhile { it <= limit - i }
-                .map { i + it }
+                .map(plus(i))
     }
 
     val total = (1..limit).minus( sums ).sum()

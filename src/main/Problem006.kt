@@ -2,7 +2,7 @@ package main
 
 /**
  * Sum square difference
- * https://main.net/problem=6
+ * https://projecteuler.net/problem=6
  */
 
 fun main(args: Array<String>) {

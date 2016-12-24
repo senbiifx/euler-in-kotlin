@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
 
     val pandigitals = (99999L downTo 1).asSequence()
                                        .map(concatenatedProduct)
-                                       .filter { it.isPandigital() }
+                                       .filter(Long::isPandigital)
 
     println(pandigitals.first())
 }

@@ -14,9 +14,9 @@ fun main(args: Array<String>) {
     val total = words.sorted()
                      .mapIndexed { index, string ->
                          string.toList()
-                               .map { it.toInt() }
-                               .filterNot { it == 34 }
-                               .map { it - 64 }
+                               .map(Char::toInt)
+                               .filterNot( equals(34) )
+                               .map( minus(64) )
                                .sum()
                                .times(index + 1)
                      }
